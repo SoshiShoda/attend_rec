@@ -1,0 +1,69 @@
+/* 全体 */
+
+html {
+    height: 100vh;
+}
+body {
+    background-image: url(../img/comp01.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.sign-in-body {
+    background-image: url(../img/repair01.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.container {
+    font-family: 'M PLUS 1', sans-serif;
+}
+.contents {
+    background-color: rgba(0,0,0,0.6);
+}
+aside, main, .sign-in-box {
+    background-color: rgba(255,255,255,0.5);
+}
+
+/* ログイン画面 */
+
+.form-box {
+    width: 35%;
+}
+#form {
+    text-align: center;
+}
+.sign-in-box {
+    padding: 20px;
+}
+
+/* サイドバー */
+
+aside {
+    min-width: 200px;
+}
+.sidebar-text {
+    text-decoration: none;
+    color: white;
+}
+
+/* メイン */
+
+.main {
+    min-width: 580px;
+}
+
+/* メイン（home.php） */
+
+#date {
+    min-width: 300px;
+}
+body > div.container.d-flex > main > form > div:nth-child(2) > div > b > input {
+    min-width: 300px;
+}
+body > div.container.d-flex > main > form > div:nth-child(3) > div > b > input {
+    min-width: 300px;
+}
+
+/* メイン (profile.php) */
+
