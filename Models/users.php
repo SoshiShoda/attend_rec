@@ -53,10 +53,11 @@ function updateUser(array $data) {
     // 更新するカラムを準備
     $set_columns = [];
     foreach ([
-        'password',
         'belongs_to',
         'address',
-        'tel'
+        'tel',
+        'email',
+        'password'
     ] as $column) {
         if (isset($data[$column]) && $data[$column] !== '') {
             $set_columns[] = $column . ' = "' . $mysqli->real_escape_string($data[$column]) . '"';
@@ -115,10 +116,9 @@ function findUserAndCheckPassword(string $employee_id, string $password) {
  * ユーザーを1件取得
  *
  * @param int $user_id
- * @param int $login_user_id
  * @return array|false
  */
-function findUser(int $user_id, int $login_user_id = null) {
+function findUser(int $user_id) {
     $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     if ($mysqli->connect_errno) {
         echo 'MySQLの接続に失敗ました：' . $mysqli->connect_error . "\n";
@@ -126,7 +126,6 @@ function findUser(int $user_id, int $login_user_id = null) {
     }
 
     $user_id = $mysqli->real_escape_string($user_id);
-    $login_user_id = $mysqli->real_escape_string($login_user_id);
 
     // ユーザー検索クエリを作成
     $query = <<<SQL
@@ -141,11 +140,11 @@ function findUser(int $user_id, int $login_user_id = null) {
             U.address,
             U.tel,
             U.email,
-            U.jointed_at,
+            U.joined_at
         FROM
             users AS U
         WHERE
-            U.status = 'active' and U.id = $user_id,
+            U.id = '$user_id'
     SQL;
 
     if ($result = $mysqli->query($query)) {

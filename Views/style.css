@@ -25,6 +25,11 @@ aside, main, .sign-in-box {
     background-color: rgba(255,255,255,0.5);
 }
 
+/* ヘッダー */
+.headerToHome {
+    font-size: xx-large;
+}
+
 /* ログイン画面 */
 
 .form-box {
@@ -66,4 +71,3 @@ body > div.container.d-flex > main > form > div:nth-child(3) > div > b > input {
 }
 
 /* メイン (profile.php) */
-

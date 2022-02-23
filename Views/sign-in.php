@@ -21,6 +21,7 @@
                     <input type="password" class="form-control my-3" name="password" placeholder="パスワード" required>
                     <button type="submit" class="btn btn-primary btn-lg my-3 w-100">ログイン</button>
                 </form>
+                <a href="sign-up.php" class="text-primary form-control text-decoration-none fs-5 bg-light">アカウント作成画面へ</a>
                 <p class="text-white">&copy;2022 xxx, Inc</p>
             </div>
         </div>
