@@ -1,56 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include_once('../Views/common/head.php'); ?>
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap" rel="stylesheet">
-
 </head>
 <body class="h-100">
-    <div class="container mt-3">
-        <h1>勤怠入力システム</h1>
-    </div>
-    <hr>
+    <?php include_once('../Views/common/header.php'); ?>
     <div class="container d-flex">
-        <aside class="col-2 p-4">
-            <ul class="list-unstyled position-fixed">
-                <li>
-                    <p>社員氏名</p>
-                </li>
-                <li>
-                    <p>社員番号</p>
-                </li>
-                <li>
-                    <a href="">
-                        <p>勤怠入力</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <p>勤怠照会</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <p>社員情報</p>
-                    </a>
-                </li>
-            </ul>
-        </aside>
+    <?php include_once('../Views/common/sidebar.php'); ?>
         <main class="col-10 p-4">
-            <h2 class="mb-4 text-primary">勤怠実績</h2>
+            <h2 class="mb-4 text-primary text-white">勤怠実績</h2>
             <hr>
             <form action="" method="POST" class="col-4">
                 <input type="month" class="form-control">
             </form>
-            <table class="table">
+            <table class="table table-sm text-white" style="width: 70%;">
                 <thead>
                     <tr class="text-center">
                         <th scope="col">日付</th>

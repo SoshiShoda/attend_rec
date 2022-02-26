@@ -65,7 +65,7 @@ function updateUser(array $data) {
     }
 
     $query = 'UPDATE users SET ' . join(',', $set_columns);
-    $query .= ' WHERE id = "' . $mysqli->real_escape_string($data['id']) . '"';
+    $query .= ' WHERE user_id = "' . $mysqli->real_escape_string($data['user_id']) . '"';
 
     $response = $mysqli->query($query);
     if ($response === false) {
@@ -130,7 +130,6 @@ function findUser(int $user_id) {
     // ユーザー検索クエリを作成
     $query = <<<SQL
         SELECT
-            U.id,
             U.user_id,
             U.employee_id,
             U.password,
@@ -144,7 +143,7 @@ function findUser(int $user_id) {
         FROM
             users AS U
         WHERE
-            U.id = '$user_id'
+            U.user_id = '$user_id'
     SQL;
 
     if ($result = $mysqli->query($query)) {

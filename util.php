@@ -43,3 +43,6 @@ function getUserSession(){
     $user = $_SESSION['USER'];
     return $user;
 }
+
+
+// function workedHours()

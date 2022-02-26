@@ -13,7 +13,7 @@ if (!$user) {
 // ユーザー情報更新
 if (isset($_POST['belongs_to']) || isset($_POST['address']) || isset($_POST['tel']) || isset($_POST['email']) || isset($_POST['password'])) {
     $data = [
-        'id' => $user['id'],
+        'user_id' => $user['user_id'],
         'belongs_to' => $_POST['belongs_to'],
         'address' => $_POST['address'],
         'tel' => $_POST['tel'],
@@ -26,7 +26,7 @@ if (isset($_POST['belongs_to']) || isset($_POST['address']) || isset($_POST['tel
 
     if (updateUser($data)) {
         // 更新後のユーザー情報をセッションに保存しなおす
-        $user = findUser($user['id']);
+        $user = findUser($user['user_id']);
         saveUserSession($user);
     };
 
