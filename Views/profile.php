@@ -23,15 +23,11 @@
                         <tbody class="text-center" >
                         <tr>
                             <th scope="row">氏名</th>
-                            <td><?php echo htmlspecialchars($view_user['family_name']); ?><?php echo htmlspecialchars($view_user['last_name']); ?></td>
+                            <td><?php echo htmlspecialchars($view_user['family_name']); ?><?php echo htmlspecialchars($view_user['first_name']); ?></td>
                         </tr>
                         <tr>
                             <th scope="row">社員番号</th>
                             <td><?php echo htmlspecialchars($view_user['employee_id']); ?></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">所属部署</th>
-                            <td><?php echo htmlspecialchars($view_user['belongs_to']); ?></td>
                         </tr>
                         <tr>
                             <th scope="row">住所</th>
@@ -58,7 +54,7 @@
             </div>
             <button type="button" class="form-control btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#js-modal" style="width: 700px;">社員情報を修正する</button>
             <div class="modal fade" id="js-modal" tabindex="-1" aria-hidden="true" aria-labelledby="profile-modalLabel">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-scrollable">
                         <div class="modal-content p-4">
                             <form action="profile.php" method="post">
                                 <div class="modal-header">
@@ -66,11 +62,9 @@
                                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                        <p>氏名：<?php echo htmlspecialchars($view_user['family_name']); ?><?php echo htmlspecialchars($view_user['last_name']); ?></p>
+                                        <p>氏名：<?php echo htmlspecialchars($view_user['family_name']); ?><?php echo htmlspecialchars($view_user['first_name']); ?></p>
                                         <p>社員番号：<?php echo htmlspecialchars($view_user['employee_id']); ?></p>
                                         <p class="text-danger">※変更する項目のみ入力してください。</p>
-                                        <span>所属部署</span>
-                                        <input type="text" class="form-control mb-3" name="belongs_to" value="" maxlength="255">
                                         <span>住所</span>
                                         <input type="text" class="form-control mb-3" name="address" value="" maxlength="255">
                                         <span>電話番号</span>

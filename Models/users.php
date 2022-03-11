@@ -16,10 +16,10 @@ function createUser(array $data) {
         exit;
     }
 
-    $query = 'INSERT INTO users (family_name, last_name, employee_id, password) VALUES (?,?,?,?)';
+    $query = 'INSERT INTO users (family_name, first_name, employee_id, password) VALUES (?,?,?,?)';
     $statement = $mysqli->prepare($query);
     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-    $statement->bind_param('ssss', $data['family_name'], $data['last_name'], $data['employee_id'], $data['password']);
+    $statement->bind_param('ssss', $data['family_name'], $data['first_name'], $data['employee_id'], $data['password']);
     $response = $statement->execute();
 
     if ($response === false) {
@@ -134,8 +134,7 @@ function findUser(int $user_id) {
             U.employee_id,
             U.password,
             U.family_name,
-            U.last_name,
-            U.belongs_to,
+            U.first_name,
             U.address,
             U.tel,
             U.email,

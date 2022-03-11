@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja" class="h-100">
+<html lang="en" class="h-100">
 <head>
     <?php include_once('../Views/common/head.php'); ?>
-    <title>勤怠管理システム | 勤怠入力画面</title>
-
+    <title>Document</title>
 </head>
-<body class="home-body h-100">
+<body class="h-100">
     <?php include_once('../Views/common/header.php'); ?>
     <div class="container d-flex">
-        <?php include_once('../Views/common/sidebar.php'); ?>
-        <main class="col-10 p-4 container">
-            <h2 class="mb-4 text-white">勤怠入力画面</h2>
-            <hr>
-            <p class="text-white fw-bold fs-5">【注意】<br>記録済みの勤怠を修正する場合は「勤怠照会」→該当する日の「修正する」から修正してください。<br>このページから修正を試みるとエラーになります。</p>
+    <?php include_once('../Views/common/sidebar.php'); ?>
+        <main class="col-10 p-4">
+            <h2 class="mb-4 text-primary text-white" id="h2" >勤怠入力</h2>
+            <p class="text-white fw-bold fs-5" id="note" >【注意】<br>記録済みの勤怠を修正する場合は「勤怠照会」→該当する日の「修正する」から修正してください。<br>このページから修正を試みるとエラーになります。</p>
             <form action="home.php" method="post" class="mt-3">
                 <div class="row my-3">
                     <div class="col-3">
                         <b class="text-white">日付
-                            <input type="date" class="form-control" name="date" id="date" value="<?php echo date('Y-m-d'); ?>">
+                            <input type="date" class="form-control" name="worked_date" id="worked_date" value="<?php echo date('Y-m-d'); ?>"  required>
                         </b>
                     </div>
                 </div>
@@ -25,9 +23,9 @@
                     <div class="col-3">
                         <b class="text-white">開始</b>
                         <div class="d-flex">
-                            <input type="number" class="form-control-sm col-3" min="0" max="24" id="start-time-hour" name="start_time_hour">
+                            <input type="number" class="form-control-sm col-3" min="0" max="24" id="start-time-hour" name="started_at_hour" required>
                             <p class="text-white fs-5 my-auto">時</p>
-                            <input type="number" class="form-control-sm col-3" step="30" min="15" max="45" id="start-time-minute" name="start_time_minute">
+                            <input type="number" class="form-control-sm col-3" step="30" min="15" max="45" id="start-time-minute" name="started_at_minute" required>
                             <p class="text-white fs-5 my-auto">分</p>
                         </div>
                     </div>
@@ -36,9 +34,9 @@
                     <div class="col-3">
                         <b class="text-white">終了</b>
                         <div class="d-flex">
-                            <input type="number" class="form-control-sm col-3" min="0" max="24" id="end-time-hour" name="end_time_hour">
+                            <input type="number" class="form-control-sm col-3" min="0" max="24" id="end-time-hour" name="ended_at_hour" required>
                             <p class="text-white fs-5 my-auto">時</p>
-                            <input type="number" class="form-control-sm col-3" step="30" min="15" max="45" id="end-time-minute" name="end_time_minute">
+                            <input type="number" class="form-control-sm col-3" step="30" min="15" max="45" id="end-time-minute" name="ended_at_minute" required>
                             <p class="text-white fs-5 my-auto">分</p>
                         </div>
                     </div>
@@ -51,6 +49,6 @@
                 <button type="submit" class="btn btn-primary btn-lg" id="create-record-btn">記録する</button>
             </form>
         </main>
-    </div>
+        <script src="../js/home.js"></script>
 </body>
 </html>

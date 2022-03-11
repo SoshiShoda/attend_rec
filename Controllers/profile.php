@@ -11,10 +11,9 @@ if (!$user) {
 }
 
 // ユーザー情報更新
-if (isset($_POST['belongs_to']) || isset($_POST['address']) || isset($_POST['tel']) || isset($_POST['email']) || isset($_POST['password'])) {
+if (isset($_POST['address']) || isset($_POST['tel']) || isset($_POST['email']) || isset($_POST['password'])) {
     $data = [
         'user_id' => $user['user_id'],
-        'belongs_to' => $_POST['belongs_to'],
         'address' => $_POST['address'],
         'tel' => $_POST['tel'],
         'email' => $_POST['email'],

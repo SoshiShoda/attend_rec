@@ -11,7 +11,7 @@
                 <h2 class="text-white">勤怠管理システム<br>アカウント作成</h2>
                 <form action="sign-up.php" method="post">
                     <input type="text" class="form-control my-3" name="family_name" maxlength="50" placeholder="姓" required autofocus>
-                    <input type="text" class="form-control my-3" name="last_name" maxlength="50" placeholder="名" required>
+                    <input type="text" class="form-control my-3" name="first_name" maxlength="50" placeholder="名" required>
                     <input type="text" class="form-control my-3" name="employee_id" maxlength="254" placeholder="社員番号" required>
                     <input type="email" class="form-control my-3" name="email" maxlength="254" placeholder="会社メールアドレス" required>
                     <input type="password" class="form-control my-3" name="password" minlength="4" maxlength="254" placeholder="パスワード" required>

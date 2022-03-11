@@ -1,0 +1,46 @@
+usersテーブル
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`(
+
+`user_id`	int(11)		NOT NULL	AUTO_INCREMENT,
+`employee_id`	varchar(10)	NOT NULL,
+`password`	varchar(126)	NOT NULL,
+`family_name`	varchar(50)	NOT NULL,
+`first_name`	varchar(50)	NOT NULL,
+`email`	varchar(254)	NOT NULL,
+`address`	varchar(254)	NOT NULL,
+`tel`	varchar(254)	NOT NULL,
+`joined_at`	varchar(50)	NOT NULL,
+`created_at`	datetime	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+`updated_at`	datetime	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`user_id`),
+KEY (`employee_id`),
+KEY (`password`),
+KEY (`family_name`),
+KEY (`first_name`),
+KEY (`email`),
+KEY (`address`),
+KEY (`tel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+recordsテーブル
+
+DROP TABLE IF EXISTS `records`;
+CREATE TABLE `records`(
+	`user_id'	int(11)		NOT NULL,
+	`employee_id`	varchar(10)	NOT NULL,
+	`worked_date`	date	NOT NULL,
+	`started_at_hour`	int(11)	NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`started_at_minute`	int(11)	NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`ended_at_hour`	int(11)	NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`ended_at_minute`	int(11)	NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`created_at`	datetime	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+	`updated_at`	datetime	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`user_id`, `date`),
+	KEY (`employee_id`),
+	KEY (`started_at_hour`),
+	KEY (`started_at_minute`),
+	KEY (`ended_at_hour`),
+	KEY (`ended_at_minute`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
